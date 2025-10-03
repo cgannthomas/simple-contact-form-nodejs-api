@@ -1,0 +1,585 @@
+{
+	"info": {
+		"_postman_id": "fe82eb72-1c06-4a75-aa03-63c508f7d421",
+		"name": "nodejs-contactForm",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47735917",
+		"_collection_link": "https://cgann02-8521737.postman.co/workspace/Personal-Workspace~83a1fdc7-a578-4703-a196-9b2ac3a32f3b/collection/47735917-fe82eb72-1c06-4a75-aa03-63c508f7d421?action=share&source=collection_link&creator=47735917"
+	},
+	"item": [
+		{
+			"name": "submit-request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john@example.com\",\r\n  \"message\": \"Hello, I am interested in your services.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{node_url}}/contact",
+					"host": [
+						"{{node_url}}"
+					],
+					"path": [
+						"contact"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success-response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john@example.com\",\r\n  \"message\": \"Hello, I am interested in your services.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{node_url}}/contact",
+							"host": [
+								"{{node_url}}"
+							],
+							"path": [
+								"contact"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "220"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"dc-TPVzPIN0ymEPJ+vOs4J6wg6VrNs\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Sep 2025 15:29:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Message sent successfully\",\n    \"data\": {\n        \"id\": \"68d40e4ad8e8fbd2582c565f\",\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\",\n        \"message\": \"Hello, I am interested in your services.\",\n        \"createdAt\": \"24 September, 2025 08:59 PM\"\n    }\n}"
+				},
+				{
+					"name": "validation-error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{node_url}}/contact",
+							"host": [
+								"{{node_url}}"
+							],
+							"path": [
+								"contact"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"25-f/icTtMnVNJicVy/z/NFU3YsKDM\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Sep 2025 15:44:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"All fields are required\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get-all-submissions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{node_url}}/contact",
+					"host": [
+						"{{node_url}}"
+					],
+					"path": [
+						"contact"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success-response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{node_url}}/contact",
+							"host": [
+								"{{node_url}}"
+							],
+							"path": [
+								"contact"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "209"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d1-28MccPTbCkggBDU530xduFY736g\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Sep 2025 15:28:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"count\": 1,\n    \"data\": [\n        {\n            \"id\": \"68d40b01c1b0cb2e277cb630\",\n            \"name\": \"John Doe\",\n            \"email\": \"john@example.com\",\n            \"message\": \"Hello, I am interested in your services.\",\n            \"createdAt\": \"24 September, 2025 08:45 PM\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "update-a-form",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Siji\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{node_url}}/contact/68d40b01c1b0cb2e277cb630",
+					"host": [
+						"{{node_url}}"
+					],
+					"path": [
+						"contact",
+						"68d40b01c1b0cb2e277cb630"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success-response",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Siji\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{node_url}}/contact/68d40b01c1b0cb2e277cb630",
+							"host": [
+								"{{node_url}}"
+							],
+							"path": [
+								"contact",
+								"68d40b01c1b0cb2e277cb630"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "261"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"105-S/0UlqFwRliOiDSKC02J15qCvCM\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Sep 2025 15:37:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Contact updated successfully\",\n    \"data\": {\n        \"id\": \"68d40b01c1b0cb2e277cb630\",\n        \"name\": \"Siji\",\n        \"email\": \"john@example.com\",\n        \"message\": \"Hello, I am interested in your services.\",\n        \"createdAt\": \"24 September, 2025 08:45 PM\",\n        \"updatedAt\": \"24 September, 2025 09:07 PM\"\n    }\n}"
+				},
+				{
+					"name": "validation-error",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{node_url}}/contact/68d40b01c1b0cb2e277cb630",
+							"host": [
+								"{{node_url}}"
+							],
+							"path": [
+								"contact",
+								"68d40b01c1b0cb2e277cb630"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "54"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"36-yTJpIvNfX8ekWJyrY0wH4jsuLrg\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Sep 2025 15:41:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"At least one field is required to update\"\n}"
+				}
+			]
+		},
+		{
+			"name": "delete a form",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{node_url}}/contact/68d40e4ad8e8fbd2582c565f",
+					"host": [
+						"{{node_url}}"
+					],
+					"path": [
+						"contact",
+						"68d40e4ad8e8fbd2582c565f"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success-response",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{node_url}}/contact/68d40e4ad8e8fbd2582c565f",
+							"host": [
+								"{{node_url}}"
+							],
+							"path": [
+								"contact",
+								"68d40e4ad8e8fbd2582c565f"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"39-2AWLBVsscwVYEekP8KW31veUa1w\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Sep 2025 15:48:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Contact deleted successfully\"\n}"
+				},
+				{
+					"name": "not-found-error",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{node_url}}/contact/68d40e4ad8e8fbd2582c565f",
+							"host": [
+								"{{node_url}}"
+							],
+							"path": [
+								"contact",
+								"68d40e4ad8e8fbd2582c565f"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2f-9cycVoVlV5xAroeWQEYz7wQ36/U\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Sep 2025 15:48:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Contact not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get a single form data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{node_url}}/contact/68d40b01c1b0cb2e277cb630",
+					"host": [
+						"{{node_url}}"
+					],
+					"path": [
+						"contact",
+						"68d40b01c1b0cb2e277cb630"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success-response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{node_url}}/contact/68d40b01c1b0cb2e277cb630",
+							"host": [
+								"{{node_url}}"
+							],
+							"path": [
+								"contact",
+								"68d40b01c1b0cb2e277cb630"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "235"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"eb-NQYPjOVrFZd5koqI4RYWxQz5yoI\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Sep 2025 15:55:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"68d40b01c1b0cb2e277cb630\",\n        \"name\": \"Siji\",\n        \"email\": \"john@example.com\",\n        \"message\": \"Hello, I am interested in your services.\",\n        \"createdAt\": \"24 September, 2025 08:45 PM\",\n        \"updatedAt\": \"24 September, 2025 09:07 PM\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
